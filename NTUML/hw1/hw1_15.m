@@ -37,6 +37,7 @@ for i = 1:length(update)
 	order = randperm(400);
 	previdx = 0;
 	idx = 1;
+	ita = 2;
 	cur = order(idx);
 	while previdx~=idx
 		cur = order(idx);
@@ -44,11 +45,11 @@ for i = 1:length(update)
 	
 		if score*y1(cur)<=0
 			update(i) = update(i) + 1;
-			w(1) = w(1)+0.5*y1(cur)*x1(cur);
-			w(2) = w(2)+0.5*y1(cur)*x2(cur);
-			w(3) = w(3)+0.5*y1(cur)*x3(cur);
-			w(4) = w(4)+0.5*y1(cur)*x4(cur);
-			w(5) = w(5)+0.5*y1(cur)*x5(cur);
+			w(1) = w(1)+ita*y1(cur)*x1(cur);
+			w(2) = w(2)+ita*y1(cur)*x2(cur);
+			w(3) = w(3)+ita*y1(cur)*x3(cur);
+			w(4) = w(4)+ita*y1(cur)*x4(cur);
+			w(5) = w(5)+ita*y1(cur)*x5(cur);
 			previdx = idx;
 		end
 	
